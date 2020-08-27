@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Token from '../components/Header/Token';
 import Streak from '../components/Header/Streak';
 import Crown from '../components/Header/Crown';
+import LanguageFlag from '../components/LanguageFlag';
 
 interface Props {}
 
@@ -15,14 +16,14 @@ const CourseScreen: React.FC<Props> = () => {
   return (
     <SafeAreaView>
       <Header>
-        <View style={{ flex: 2 }}>
-          <Text>flag</Text>
+        <View style={styles.headerLeft}>
+          <LanguageFlag countryCode="DE" size={50} />
         </View>
         <View style={styles.headerCenter}>
           <Crown />
           <Streak />
         </View>
-        <View style={{ flex: 2 }}>
+        <View style={styles.headerRight}>
           <Token />
         </View>
       </Header>
@@ -34,10 +35,14 @@ const CourseScreen: React.FC<Props> = () => {
 export default CourseScreen;
 
 const styles = StyleSheet.create({
+  headerLeft: { flex: 2, paddingLeft: 10 },
   headerCenter: {
     flex: 3,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  headerRight: {
+    flex: 2,
   },
 });
