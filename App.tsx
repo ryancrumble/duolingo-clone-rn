@@ -1,21 +1,27 @@
 import 'react-native-gesture-handler';
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import AppNavigator from './src/navigation/AppNavigator';
 import { useFonts } from 'expo-font';
+import { AppLoading } from 'expo';
+
+import AppNavigator from './src/navigation/AppNavigator';
 
 export default function App() {
-    const [loaded] = useFonts({
-        BalooTamma2: require('./assets/fonts/BalooTamma2-Regular.ttf'),
-    });
+  const [fontsLoaded] = useFonts({
+    BalooTamma2Bold: require('./assets/fonts/BalooTamma2-Bold.ttf'),
+    NunitoLight: require('./assets/fonts/Nunito-Light.ttf'),
+    NunitoRegular: require('./assets/fonts/Nunito-Regular.ttf'),
+    NunitoSemiBold: require('./assets/fonts/Nunito-SemiBold.ttf'),
+    NunitoBold: require('./assets/fonts/Nunito-Bold.ttf'),
+  });
 
-    if (!loaded) {
-        return null;
-    }
-
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
     return (
-        <>
-            <AppNavigator />
-        </>
+      <>
+        <AppNavigator />
+      </>
     );
+  }
 }
