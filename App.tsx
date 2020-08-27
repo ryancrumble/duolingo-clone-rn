@@ -8,6 +8,7 @@ import AppNavigator from './src/navigation/AppNavigator';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
+    BalooTamma2SemiBold: require('./assets/fonts/BalooTamma2-SemiBold.ttf'),
     BalooTamma2Bold: require('./assets/fonts/BalooTamma2-Bold.ttf'),
     NunitoLight: require('./assets/fonts/Nunito-Light.ttf'),
     NunitoRegular: require('./assets/fonts/Nunito-Regular.ttf'),
