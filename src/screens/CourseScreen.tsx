@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SafeAreaView from '../components/SafeAreaView';
-import { FlatList } from 'react-native-gesture-handler';
 
-import { colors, typography } from '../styles/globalStyles';
 import Header from '../components/Header/Header';
 import Token from '../components/Header/Token';
 import Streak from '../components/Header/Streak';
 import Crown from '../components/Header/Crown';
 import LanguageFlag from '../components/LanguageFlag';
+
+import data from '../../mocks/courseData/DE.json';
+import ExerciseTree from '../components/Course/ExerciseTree';
 
 interface Props {}
 
@@ -21,13 +22,14 @@ const CourseScreen: React.FC<Props> = () => {
         </View>
         <View style={styles.headerCenter}>
           <Crown />
-          <Streak />
+          <Streak isTodayCompleted={false} />
         </View>
         <View style={styles.headerRight}>
           <Token />
         </View>
       </Header>
       {/* TODO: Add Flatlist and render lesson tree */}
+      <ExerciseTree data={data} />
     </SafeAreaView>
   );
 };

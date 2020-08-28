@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from '../components/Header/Header';
 import SafeAreaView from '../components/SafeAreaView';
-import { FontAwesome5 } from '@expo/vector-icons';
 
 import { colors, typography } from '../styles/globalStyles';
 import Token from '../components/Header/Token';

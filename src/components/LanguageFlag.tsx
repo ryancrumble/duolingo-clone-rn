@@ -1,19 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
-
+import { Language } from '../types/language';
 interface Props {
   countryCode: string;
   size: number;
-}
-
-enum Language {
-  DE = 'DE',
-  EN = 'EN',
-  ES = 'ES',
-  IT = 'IT',
-  NO = 'NO',
-  SE = 'SE',
-  TR = 'TR',
 }
 
 const imagePath = '../../assets/flags/';

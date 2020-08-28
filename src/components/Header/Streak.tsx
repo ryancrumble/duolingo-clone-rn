@@ -4,15 +4,20 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { colors, typography } from '../../styles/globalStyles';
 
 interface Props {
+  isTodayCompleted: boolean;
   style?: Object;
   // style: StyleProp<ViewStyle>;
 }
 
 const Streak: React.FC<Props> = (props) => {
+  const isActive = () => {
+    return props.isTodayCompleted ? colors.secondary.orange : colors.tints.gray;
+  };
+
   return (
     <View style={{ ...styles.container, ...props.style }}>
-      <FontAwesome5 name="fire-alt" size={24} color={colors.secondary.orange} />
-      <Text style={styles.text}>3</Text>
+      <FontAwesome5 name="fire-alt" size={24} color={isActive()} />
+      <Text style={{ ...styles.text, color: isActive() }}>3</Text>
     </View>
   );
 };
