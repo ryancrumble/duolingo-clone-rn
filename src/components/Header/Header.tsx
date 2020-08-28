@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, StyleProp, ViewStyle } from 'react-native';
-import { colors } from '../styles/globalStyles';
+import { colors } from '../../styles/globalStyles';
 
 interface Props {
   children: React.ReactNode;

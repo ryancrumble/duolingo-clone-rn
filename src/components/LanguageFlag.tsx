@@ -40,7 +40,12 @@ const LanguageFlag: React.FC<Props> = (props) => {
   };
 
   const imageSize = () => {
-    return { width: props.size, height: props.size };
+    /**
+     * Width = size
+     * Height = 2/3 of size
+     * Border Radius = 10% of size
+     */
+    return { width: props.size, height: props.size - props.size / 3, borderRadius: props.size / 10 };
   };
 
   return <Image style={{ ...styles.image, ...imageSize() }} source={imageSource()} />;
@@ -49,7 +54,5 @@ const LanguageFlag: React.FC<Props> = (props) => {
 export default LanguageFlag;
 
 const styles = StyleSheet.create({
-  image: {
-    borderRadius: 14,
-  },
+  image: {},
 });

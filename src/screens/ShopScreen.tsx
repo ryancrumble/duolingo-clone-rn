@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import SafeAreaView from '../components/SafeAreaView';
 import { FontAwesome5 } from '@expo/vector-icons';
 
