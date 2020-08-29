@@ -45,17 +45,15 @@ export default ExerciseTree;
 
 const styles = StyleSheet.create({
   section: {
-    borderColor: 'green',
-    borderWidth: 4,
     flex: 1,
-    paddingHorizontal: '15%',
+    paddingBottom: 60,
   },
   tier: {
-    borderColor: 'lightgreen',
-    borderWidth: 3,
+    // borderColor: 'lightgreen',
+    // borderWidth: 3,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    paddingVertical: 40,
+    paddingVertical: 10,
   },
 });

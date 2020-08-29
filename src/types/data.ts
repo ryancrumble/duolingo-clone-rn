@@ -21,9 +21,10 @@ export interface CourseTier {
 export interface CourseExercise {
   id: string;
   definition: CourseExerciseDefinition;
-  leaner?: {
+  learner: {
     level: number;
     lesson: number;
+    isCompleted: boolean;
   };
 }
 

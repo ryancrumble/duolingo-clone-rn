@@ -8,7 +8,7 @@ interface Props {
   // style: StyleProp<ViewStyle>;
 }
 
-const Streak: React.FC<Props> = (props) => {
+const Crown: React.FC<Props> = (props) => {
   return (
     <View style={{ ...styles.container, ...props.style }}>
       <FontAwesome5 name="crown" size={24} color={colors.secondary.yellow} />
@@ -17,7 +17,7 @@ const Streak: React.FC<Props> = (props) => {
   );
 };
 
-export default Streak;
+export default Crown;
 
 const styles = StyleSheet.create({
   container: {
