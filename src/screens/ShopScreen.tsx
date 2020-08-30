@@ -1,24 +1,17 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { colors, typography, globalStyles } from '../styles/globalStyles';
+import { colors, typography } from '../styles/globalStyles';
 
 import SafeAreaView from '../components/SafeAreaView';
 import Header from '../components/Header/Header';
 import Token from '../components/Header/Token';
 import ShopCard from '../components/Shop/ShopCard';
 
-import { Context as ShopContext } from '../contexts/ShopContext';
 import { AppLoading } from 'expo';
-import { ShopSection, ShopItem, ShopData } from '../types/data';
-import { Language } from '../types/language';
+import { ShopItem } from '../types/data';
 
 import mockShopData from '../../mocks/shopData.json';
-
-const test = {
-  key1: ['foo'],
-  key2: ['bar'],
-};
 
 interface Props {}
 
