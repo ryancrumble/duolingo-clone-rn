@@ -1,7 +1,7 @@
+import { Language } from './language';
 /**
  * Course Data
  */
-import { Language } from './language';
 
 export interface Course {
   course?: Language;
@@ -32,4 +32,25 @@ export interface CourseExerciseDefinition {
   name: string;
   levels: number;
   lessons: number;
+}
+
+/**
+ * Shop Data
+ */
+
+export interface ShopData {
+  generalSections: ShopSection[];
+  courseSections: ShopSection[];
+}
+
+export interface ShopSection {
+  name: string;
+  items: ShopItem[];
+}
+
+export interface ShopItem {
+  name: string;
+  description: string;
+  tokenCost: number;
+  image: string;
 }

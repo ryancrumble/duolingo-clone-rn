@@ -6,6 +6,7 @@ const colors = {
     greenTwo: '#99cc00',
     gray: '#777777', // No variation
     white: '#FFFFFF', // No variation
+    black: '#000000',
   },
   secondary: {
     red: '#ff3333',

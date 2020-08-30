@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "name": "Streak",
+      "items": [
+        {
+          "name": "Streak and Freeze",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
+          "image": "imageSource"
+        },
+        {
+          "name": "Double or Nothing",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
+          "image": "imageSource"
+        }
+      ]
+    },
+    {
+      "name": "Outfits",
+      "items": [
+        {
+          "name": "Formal Attire",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
+          "image": "imageSource"
+        },
+        {
+          "name": "Champagne Tracksuit",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
+          "image": "imageSource"
+        },
+        {
+          "name": "Super Duo",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
+          "image": "imageSource"
+        }
+      ]
+    },
+    {
+      "name": "Bonus Skills",
+      "items": [
+        {
+          "name": "Idioms and Proverbs",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, tempore.",
+          "image": "imageSource"
+        },
+        {
+          "name": "Flirting",
+          "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate earum laboriosam doloremque unde atque.",
+          "image": "imageSource"
+        }
+      ]
+    }
+  ]
+}

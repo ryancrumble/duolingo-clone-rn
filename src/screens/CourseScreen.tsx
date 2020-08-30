@@ -28,7 +28,6 @@ const CourseScreen: React.FC<Props> = () => {
           <Token />
         </View>
       </Header>
-      {/* TODO: Add Flatlist and render lesson tree */}
       <ExerciseTree data={data} />
     </SafeAreaView>
   );

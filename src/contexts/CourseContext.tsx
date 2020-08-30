@@ -1,4 +1,6 @@
 import createDataContext from '../utils/createDataContext';
+import mockCourseData from '../../mocks/courseData/DE.json';
+import { Language } from '../types/language';
 
 // App level (globally used requests)
 enum ActionType {
@@ -11,7 +13,7 @@ interface Reducer {
 }
 
 interface State {
-  courseData: {};
+  courseData: {} | null;
 }
 
 const appReducer: React.Reducer<State, Reducer> = (state, action) => {
@@ -25,9 +27,14 @@ const appReducer: React.Reducer<State, Reducer> = (state, action) => {
 
 /* Actions */
 
-const fetchCourseData = (dispatch: any) => () => {
+const fetchCourseData = (dispatch: any) => (language: Language) => {
   try {
-    dispatch({ type: ActionType.GET_COURSE_DATA });
+    // Fetch request (imitation)
+    // e.g. axios.get('/course', language);
+    console.log('selectedLanguage: ', language);
+    const mockResponse = mockCourseData;
+
+    dispatch({ type: ActionType.GET_COURSE_DATA, payload: mockResponse });
   } catch (error) {
     console.log(error);
   }
