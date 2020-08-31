@@ -1,4 +1,4 @@
-import { Level } from '../types/ui';
+import { Level, League } from '../types/ui';
 import { colors } from '../styles/globalStyles';
 
 const getLevelColor = (level: number, isCompleted: boolean = false): string => {
@@ -24,4 +24,31 @@ const getLevelColor = (level: number, isCompleted: boolean = false): string => {
   }
 };
 
-export { getLevelColor };
+const getLeagueColor = (league: string): string => {
+  switch (league) {
+    case League.BRONZE:
+      return colors.leagues.bronze;
+    case League.SILVER:
+      return colors.leagues.silver;
+    case League.GOLD:
+      return colors.leagues.gold;
+    case League.SAPPHIRE:
+      return colors.leagues.sapphire;
+    case League.RUBY:
+      return colors.leagues.ruby;
+    case League.EMERALD:
+      return colors.leagues.emerald;
+    case League.AMETHYST:
+      return colors.leagues.amethyst;
+    case League.OBSIDIAN:
+      return colors.leagues.obsidian;
+    case League.PEARL:
+      return colors.leagues.pearl;
+    case League.DIAMOND:
+      return colors.leagues.diamond;
+    default:
+      return colors.primary.gray;
+  }
+};
+
+export { getLevelColor, getLeagueColor };

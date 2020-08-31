@@ -10,9 +10,6 @@ interface Props {
 
 const renderSection = ({ item }: any) => {
   const { id, data } = item as CourseSection;
-  // const backgroundColor = id === selectedId ? '#6e3b6e' : '#f9c2ff';
-
-  // return <Item item={item} onPress={() => setSelectedId(item.id)} style={{ backgroundColor }} />;
 
   return (
     <View style={styles.section}>

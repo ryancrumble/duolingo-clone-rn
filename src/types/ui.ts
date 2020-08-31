@@ -6,3 +6,16 @@ export enum Level {
   ORANGE,
   GOLD,
 }
+
+export enum League {
+  BRONZE = 'BRONZE',
+  SILVER = 'SILVER',
+  GOLD = 'GOLD',
+  SAPPHIRE = 'SAPPHIRE',
+  RUBY = 'RUBY',
+  EMERALD = 'EMERALD',
+  AMETHYST = 'AMETHYST',
+  PEARL = 'PEARL',
+  OBSIDIAN = 'OBSIDIAN',
+  DIAMOND = 'DIAMOND',
+}

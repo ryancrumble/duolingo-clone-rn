@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "name": "Bronze",
+      "isComplete": true,
+      "isActive": false,
+      "color": "BRONZE"
+    },
+    {
+      "name": "Silver",
+      "isComplete": true,
+      "isActive": false,
+      "color": "SILVER"
+    },
+    {
+      "name": "Gold",
+      "isComplete": false,
+      "isActive": true,
+      "color": "GOLD"
+    },
+    {
+      "name": "Sapphire",
+      "isComplete": false,
+      "isActive": false,
+      "color": "SAPPHIRE"
+    },
+    {
+      "name": "Ruby",
+      "isComplete": false,
+      "isActive": false,
+      "color": "RUBY"
+    },
+    {
+      "name": "Emerald",
+      "isComplete": false,
+      "isActive": false,
+      "color": "EMERALD"
+    },
+    {
+      "name": "Amethyst",
+      "isComplete": false,
+      "isActive": false,
+      "color": "AMETHYST"
+    },
+    {
+      "name": "Pearl",
+      "isComplete": false,
+      "isActive": false,
+      "color": "PEARL"
+    },
+    {
+      "name": "Obsidian",
+      "isComplete": false,
+      "isActive": false,
+      "color": "OBSIDIAN"
+    },
+    {
+      "name": "Diamond",
+      "isComplete": false,
+      "isActive": false,
+      "color": "DIAMOND"
+    }
+  ]
+}
