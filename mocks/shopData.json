@@ -6,12 +6,14 @@
         {
           "name": "Streak and Freeze",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
-          "image": "imageSource"
+          "image": "ICEBERG",
+          "tokenCost": 10
         },
         {
           "name": "Double or Nothing",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
-          "image": "imageSource"
+          "image": "FIRE",
+          "tokenCost": 10
         }
       ]
     },
@@ -21,17 +23,20 @@
         {
           "name": "Formal Attire",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
-          "image": "imageSource"
+          "image": "SUIT",
+          "tokenCost": 10
         },
         {
           "name": "Champagne Tracksuit",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
-          "image": "imageSource"
+          "image": "TRACKSUIT",
+          "tokenCost": 10
         },
         {
           "name": "Super Duo",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum voluptatem eligendi.",
-          "image": "imageSource"
+          "image": "SUPERHERO",
+          "tokenCost": 10
         }
       ]
     },
@@ -41,12 +46,14 @@
         {
           "name": "Idioms and Proverbs",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, tempore.",
-          "image": "imageSource"
+          "image": "CONVERSATION",
+          "tokenCost": 10
         },
         {
           "name": "Flirting",
           "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate earum laboriosam doloremque unde atque.",
-          "image": "imageSource"
+          "image": "DATING",
+          "tokenCost": 10
         }
       ]
     }
