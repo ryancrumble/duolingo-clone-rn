@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 
-import { colors } from '../styles/globalStyles';
+import { colors, globalStyles } from '../styles/globalStyles';
 import { getLeagueColor } from '../utils/uiUtils';
 
 import mockLeagues from '../../mocks/leagueData.json';
@@ -179,9 +180,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: colors.secondary.lavendar,
     marginRight: 14,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    ...globalStyles.centerAlign,
   },
   userItemAvatarText: {
     color: colors.primary.white,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import SafeAreaView from '../components/SafeAreaView';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Header from '../components/Header/Header';
 import Token from '../components/Header/Token';

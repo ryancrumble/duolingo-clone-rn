@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, StyleProp, ViewStyle } from 'react-native';
-import { colors } from '../../styles/globalStyles';
+import { colors, globalStyles } from '../../styles/globalStyles';
 
 interface Props {
   children: React.ReactNode;
@@ -16,11 +16,9 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
-    display: 'flex',
+    ...globalStyles.centerAlign,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: 50,
     borderBottomWidth: 2,
     borderColor: colors.tints.gray,
   },

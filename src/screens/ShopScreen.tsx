@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { colors, typography } from '../styles/globalStyles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import SafeAreaView from '../components/SafeAreaView';
 import Header from '../components/Header/Header';
 import Token from '../components/Header/Token';
 import ShopCard from '../components/Shop/ShopCard';
+import { colors, typography } from '../styles/globalStyles';
 
 import { AppLoading } from 'expo';
 import { ShopItem } from '../types/data';
