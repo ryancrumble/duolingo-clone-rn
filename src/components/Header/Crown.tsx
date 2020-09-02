@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   text: {
-    fontFamily: 'BalooTamma2SemiBold',
+    ...typography.fontPrimary,
     fontSize: 22,
     color: colors.secondary.yellow,
     marginLeft: 6,

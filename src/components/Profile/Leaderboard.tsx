@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 
-import { colors, globalStyles } from '../../styles/globalStyles';
+import { colors, globalStyles, typography } from '../../styles/globalStyles';
 
 interface Props {
   data: Array<any>;
@@ -72,26 +72,26 @@ const styles = StyleSheet.create({
     height: 80,
   },
   userItemName: {
-    fontFamily: 'BalooTamma2SemiBold',
+    ...typography.fontPrimary,
     fontSize: 18,
     color: colors.primary.black,
   },
   userItemAvatar: {
+    ...globalStyles.centerAlign,
+    borderRadius: 30,
     height: 60,
     width: 60,
-    borderRadius: 30,
     backgroundColor: colors.secondary.lavendar,
     marginRight: 14,
-    ...globalStyles.centerAlign,
   },
   userItemAvatarText: {
     color: colors.primary.white,
-    fontFamily: 'BalooTamma2SemiBold',
+    ...typography.fontPrimary,
     fontSize: 26,
     paddingTop: 6,
   },
   userItemExp: {
-    fontFamily: 'NunitoRegular',
+    ...typography.fontSecondary,
     fontSize: 18,
     color: colors.primary.gray,
   },

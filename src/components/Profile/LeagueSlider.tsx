@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, StyleProp, ViewStyle } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import { colors, globalStyles } from '../../styles/globalStyles';
+import { colors, globalStyles, typography } from '../../styles/globalStyles';
 import { getLeagueColor } from '../../utils/uiUtils';
 import { LeagueItem } from '../../types/data';
 
@@ -75,18 +75,18 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   leagueTitle: {
-    fontFamily: 'BalooTamma2SemiBold',
+    ...typography.fontPrimary,
     fontSize: 28,
     color: colors.tints.black,
   },
   leagueSubText: {
-    fontFamily: 'NunitoRegular',
+    ...typography.fontSecondary,
     fontSize: 18,
     color: colors.primary.gray,
     marginBottom: 4,
   },
   leagueTimer: {
-    fontFamily: 'BalooTamma2SemiBold',
+    ...typography.fontPrimary,
     fontSize: 22,
     color: colors.secondary.yellow,
     marginBottom: 8,

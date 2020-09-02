@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather, FontAwesome5 } from '@expo/vector-icons';
@@ -8,14 +8,41 @@ import { colors, typography, globalStyles } from '../styles/globalStyles';
 import Header from '../components/Header/Header';
 import StatisticCard from '../components/Profile/StatisticCard';
 import MultiTabView from '../components/Tabs/MultiTabView';
+import MultiTabListItem from '../components/Tabs/MultiTabListItem';
 
 import mockFriends from '../../mocks/friendsData.json';
+import { FriendItem } from '../types/data';
+import { AppLoading } from 'expo';
 interface Props {
   name: string;
   color: string;
 }
 
 const ProfileScreen: React.FC<Props> = () => {
+  const [loading, setLoading] = useState(true);
+  const [followingData, setFollowingData] = useState([] as FriendItem[]);
+  const [followerData, setFollowerData] = useState([] as FriendItem[]);
+
+  const sortListByExp = (arr: FriendItem[]) => {
+    return arr.sort((a: FriendItem, b: FriendItem) => {
+      return b.exp - a.exp;
+    });
+  };
+
+  const fetchData = () => {
+    setFollowingData(sortListByExp(mockFriends.data.following));
+    setFollowerData(sortListByExp(mockFriends.data.followers));
+  };
+
+  useEffect(() => {
+    fetchData();
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    <AppLoading />;
+  }
+  // FIXME: Scrollview doesn't allow the screen to scroll
   return (
     <SafeAreaView>
       <Header>
@@ -66,12 +93,18 @@ const ProfileScreen: React.FC<Props> = () => {
             tabs={[
               { key: 't1', title: 'Following' },
               { key: 't2', title: 'Followers' },
-              { key: 't3', title: 'Freedom' },
             ]}
           >
-            <Text key={'t1'}>one</Text>
-            <Text key={'t2'}>two</Text>
-            <Text key={'t3'}>three</Text>
+            <View key={'t1'}>
+              {followingData.map((friend: FriendItem, index) => {
+                return <MultiTabListItem item={friend} key={index} />;
+              })}
+            </View>
+            <View key={'t2'}>
+              {followerData.map((friend: FriendItem, index) => {
+                return <MultiTabListItem item={friend} key={index} />;
+              })}
+            </View>
           </MultiTabView>
         </View>
       </ScrollView>

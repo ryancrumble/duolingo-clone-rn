@@ -7,6 +7,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { CourseExercise } from '../../types/data';
 import colors from '../../styles/colors';
 import { getLevelColor } from '../../utils/uiUtils';
+import typography from '../../styles/typography';
 
 interface Props {
   exercise: CourseExercise;
@@ -80,8 +81,7 @@ const styles = StyleSheet.create({
     marginTop: 6,
   },
   exerciseText: {
-    fontFamily: 'BalooTamma2SemiBold',
-    fontSize: 20,
+    ...typography.fontPrimary,
   },
   crownContainer: {
     position: 'absolute',
@@ -91,29 +91,29 @@ const styles = StyleSheet.create({
     height: 52,
   },
   crownWhiteBorder: {
-    position: 'absolute',
     zIndex: 11,
+    position: 'absolute',
   },
   crownDisabled: {
+    zIndex: 12,
     position: 'absolute',
     top: 6,
     left: 5,
-    zIndex: 12,
   },
   crownIcon: {
+    zIndex: 13,
     position: 'absolute',
     top: 8,
     left: 6,
-    zIndex: 13,
   },
   crownText: {
+    zIndex: 14,
     position: 'absolute',
     top: 10,
     left: 18,
+    ...typography.fontPrimary,
+    fontSize: 18,
     textAlign: 'center',
     color: colors.tints.yellowDark,
-    fontFamily: 'BalooTamma2SemiBold',
-    fontSize: 18,
-    zIndex: 14,
   },
 });

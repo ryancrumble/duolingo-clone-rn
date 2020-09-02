@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import MultiTabSelector, { TabType } from './MultiTabSelector';
 
 interface Props {
   tabs: TabType[];
-  children: React.ReactChildren;
 }
 
 const MultiTabView: React.FC<Props> = (props) => {
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedTab, setSelectedTab] = useState({} as TabType);
   const children = props.children;
 
   const renderTabPane = () => {
     return React.Children.map(children, (child, i) => {
       if (child && child.hasOwnProperty('key')) {
-        if (child['key'] === selectedTab.key) {
+        if (child.key === selectedTab.key) {
           return child;
         }
       }

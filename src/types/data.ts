@@ -66,3 +66,13 @@ export interface LeagueItem {
   isActive: boolean;
   color: string;
 }
+
+/**
+ *
+ * Profile Data
+ */
+
+export interface FriendItem {
+  name: string;
+  exp: number;
+}

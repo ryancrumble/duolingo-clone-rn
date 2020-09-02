@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalStyles, colors } from '../../styles/globalStyles';
+import { globalStyles, colors, typography } from '../../styles/globalStyles';
 
 interface Props {
   title: string;
@@ -50,13 +50,11 @@ const styles = StyleSheet.create({
     paddingTop: 1,
   },
   titleText: {
-    fontFamily: 'NunitoRegular',
-    fontSize: 16,
+    ...typography.fontSecondary,
     color: colors.primary.gray,
   },
   valueText: {
-    fontFamily: 'BalooTamma2SemiBold',
-    fontSize: 20,
+    ...typography.fontPrimary,
     color: colors.tints.black,
   },
 });

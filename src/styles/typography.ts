@@ -12,6 +12,22 @@ import colors from './colors';
  *  */
 
 const typography = StyleSheet.create({
+  fontPrimary: {
+    fontFamily: 'BalooTamma2SemiBold',
+    fontSize: 20,
+  },
+  fontSecondary: {
+    fontFamily: 'NunitoRegular',
+    fontSize: 16,
+  },
+  fontSecondarySemiBold: {
+    fontFamily: 'NunitoSemiBold',
+    fontSize: 20,
+  },
+  fontSecondaryBold: {
+    fontFamily: 'NunitoBold',
+    fontSize: 20,
+  },
   headerText: {
     fontFamily: 'BalooTamma2SemiBold',
     fontSize: 20,

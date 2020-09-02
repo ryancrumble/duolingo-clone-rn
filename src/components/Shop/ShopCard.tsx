@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { colors } from '../../styles/globalStyles';
+import { colors, typography } from '../../styles/globalStyles';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ShopItem } from '../../types/data';
 
@@ -76,32 +76,27 @@ const styles = StyleSheet.create({
     paddingBottom: 14,
   },
   sectionIcon: {
-    // borderColor: 'lightgreen',
-    // borderWidth: 2,
     width: 140,
     paddingTop: 10,
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
   sectionDetails: {
-    // borderColor: 'red',
-    // borderWidth: 2,
     flexShrink: 1,
     display: 'flex',
     justifyContent: 'space-between',
     paddingLeft: 12,
   },
   titleText: {
-    fontFamily: 'NunitoBold',
-    fontSize: 20,
+    ...typography.fontSecondaryBold,
     color: colors.primary.black,
     marginBottom: 4,
   },
   descriptionText: {
-    flexShrink: 1,
-    fontFamily: 'NunitoRegular',
+    ...typography.fontSecondary,
     fontSize: 18,
     color: colors.primary.gray,
+    flexShrink: 1,
     marginBottom: 8,
   },
   token: {
@@ -111,7 +106,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   tokenText: {
-    fontFamily: 'BalooTamma2SemiBold',
+    ...typography.fontPrimary,
     fontSize: 18,
     color: colors.secondary.red,
     marginLeft: 6,
