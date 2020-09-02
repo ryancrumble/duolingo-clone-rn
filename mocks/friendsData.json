@@ -1,0 +1,72 @@
+{
+  "data": {
+    "following": [
+      {
+        "name": "Anna",
+        "exp": 14750
+      },
+      {
+        "name": "Bart",
+        "exp": 2345
+      },
+      {
+        "name": "Charlotte",
+        "exp": 2205
+      },
+      {
+        "name": "Deanna",
+        "exp": 4031
+      },
+      {
+        "name": "Erik",
+        "exp": 1620
+      },
+      {
+        "name": "Fenton",
+        "exp": 1447
+      },
+      {
+        "name": "Georgia",
+        "exp": 10
+      },
+      {
+        "name": "Harry",
+        "exp": 7415
+      }
+    ],
+    "followers": [
+      {
+        "name": "Ian",
+        "exp": 12570
+      },
+      {
+        "name": "Jess",
+        "exp": 4235
+      },
+      {
+        "name": "Kelly",
+        "exp": 5022
+      },
+      {
+        "name": "Lukas",
+        "exp": 3041
+      },
+      {
+        "name": "Michelle",
+        "exp": 1620
+      },
+      {
+        "name": "Nicole",
+        "exp": 4147
+      },
+      {
+        "name": "Oskar",
+        "exp": 10
+      },
+      {
+        "name": "Patricia",
+        "exp": 7415
+      }
+    ]
+  }
+}

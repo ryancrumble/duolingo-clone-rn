@@ -2,11 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather, FontAwesome5 } from '@expo/vector-icons';
-
-import Header from '../components/Header/Header';
-import { colors, typography, globalStyles } from '../styles/globalStyles';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+
+import { colors, typography, globalStyles } from '../styles/globalStyles';
+import Header from '../components/Header/Header';
 import StatisticCard from '../components/Profile/StatisticCard';
+import MultiTabView from '../components/Tabs/MultiTabView';
+
+import mockFriends from '../../mocks/friendsData.json';
 interface Props {
   name: string;
   color: string;
@@ -59,6 +62,17 @@ const ProfileScreen: React.FC<Props> = () => {
               <Text style={{ ...typography.linkText }}>Add Friends</Text>
             </TouchableOpacity>
           </View>
+          <MultiTabView
+            tabs={[
+              { key: 't1', title: 'Following' },
+              { key: 't2', title: 'Followers' },
+              { key: 't3', title: 'Freedom' },
+            ]}
+          >
+            <Text key={'t1'}>one</Text>
+            <Text key={'t2'}>two</Text>
+            <Text key={'t3'}>three</Text>
+          </MultiTabView>
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -54,3 +54,15 @@ export interface ShopItem {
   tokenCost: number;
   image: string;
 }
+
+/**
+ *
+ * League Data
+ */
+
+export interface LeagueItem {
+  name: string;
+  isComplete: boolean;
+  isActive: boolean;
+  color: string;
+}
