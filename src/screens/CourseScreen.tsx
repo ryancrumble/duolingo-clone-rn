@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Header from '../components/Header/Header';
@@ -10,12 +10,13 @@ import LanguageFlag from '../components/LanguageFlag';
 
 import data from '../../mocks/courseData/DE.json';
 import ExerciseTree from '../components/Course/ExerciseTree';
+import { globalStyles } from '../styles/globalStyles';
 
 interface Props {}
 
 const CourseScreen: React.FC<Props> = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header>
         <View style={styles.headerLeft}>
           <LanguageFlag countryCode="DE" size={50} />
@@ -36,6 +37,9 @@ const CourseScreen: React.FC<Props> = () => {
 export default CourseScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    ...globalStyles.background,
+  },
   headerLeft: { flex: 2, marginLeft: 12 },
   headerCenter: {
     flex: 3,

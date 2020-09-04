@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 import colors from './colors';
 
 /**
- * BalooTamma2SemiBold
- * BalooTamma2Bold
+ * Baloo2SemiBold
+ * Baloo2Bold
  * NunitoLight
  * NunitoRegular
  * NunitoSemiBold
@@ -13,7 +13,7 @@ import colors from './colors';
 
 const typography = StyleSheet.create({
   fontPrimary: {
-    fontFamily: 'BalooTamma2SemiBold',
+    fontFamily: 'Baloo2SemiBold',
     fontSize: 20,
   },
   fontSecondary: {
@@ -29,17 +29,17 @@ const typography = StyleSheet.create({
     fontSize: 20,
   },
   headerText: {
-    fontFamily: 'BalooTamma2SemiBold',
+    fontFamily: 'Baloo2SemiBold',
     fontSize: 20,
     color: '#B0B0B0',
   },
   headingOne: {
-    fontFamily: 'BalooTamma2SemiBold',
+    fontFamily: 'Baloo2SemiBold',
     fontSize: 32,
     color: colors.tints.black,
   },
   linkText: {
-    fontFamily: 'BalooTamma2SemiBold',
+    fontFamily: 'Baloo2SemiBold',
     fontSize: 20,
     textTransform: 'uppercase',
     color: colors.secondary.blue,

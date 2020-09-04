@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppLoading } from 'expo';
 
@@ -7,6 +9,7 @@ import Leaderboard from '../components/Profile/Leaderboard';
 
 import mockLeagues from '../../mocks/leagueData.json';
 import mockUsers from '../../mocks/leagueUserData.json';
+import { globalStyles } from '../styles/globalStyles';
 
 interface Props {}
 
@@ -23,7 +26,7 @@ const LeagueScreen: React.FC<Props> = () => {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <LeagueSlider data={mockLeagues.data} />
       <Leaderboard data={mockUsers.data} />
     </SafeAreaView>
@@ -31,3 +34,9 @@ const LeagueScreen: React.FC<Props> = () => {
 };
 
 export default LeagueScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    ...globalStyles.background,
+  },
+});

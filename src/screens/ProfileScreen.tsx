@@ -13,6 +13,7 @@ import MultiTabListItem from '../components/Tabs/MultiTabListItem';
 import mockFriends from '../../mocks/friendsData.json';
 import { FriendItem } from '../types/data';
 import { AppLoading } from 'expo';
+import MultiTabLastListItem from '../components/Tabs/MultiTabLastListItem';
 interface Props {
   name: string;
   color: string;
@@ -20,18 +21,35 @@ interface Props {
 
 const ProfileScreen: React.FC<Props> = () => {
   const [loading, setLoading] = useState(true);
-  const [followingData, setFollowingData] = useState([] as FriendItem[]);
-  const [followerData, setFollowerData] = useState([] as FriendItem[]);
+  const [followingList, setFollowingList] = useState([] as JSX.Element[]);
+  const [followerList, setFollowerList] = useState([] as JSX.Element[]);
 
-  const sortListByExp = (arr: FriendItem[]) => {
-    return arr.sort((a: FriendItem, b: FriendItem) => {
-      return b.exp - a.exp;
-    });
+  const renderFriendsList = (data: any[]) => {
+    const sortListByExp = (arr: FriendItem[]) => {
+      return arr.sort((a: FriendItem, b: FriendItem) => {
+        return b.exp - a.exp;
+      });
+    };
+
+    const sortedData = sortListByExp(data);
+    const arr: JSX.Element[] = [];
+
+    for (let i = 0; i <= sortedData.length; i++) {
+      if (i <= 4) {
+        arr.push(<MultiTabListItem item={sortedData[i]} key={i} />);
+      } else if (i === 5) {
+        const remainingFriends = sortedData.length - 5;
+        arr.push(<MultiTabLastListItem remainingItems={remainingFriends} key={i} />);
+      } else {
+        break;
+      }
+    }
+    return arr;
   };
 
   const fetchData = () => {
-    setFollowingData(sortListByExp(mockFriends.data.following));
-    setFollowerData(sortListByExp(mockFriends.data.followers));
+    setFollowingList(renderFriendsList(mockFriends.data.following));
+    setFollowerList(renderFriendsList(mockFriends.data.followers));
   };
 
   useEffect(() => {
@@ -42,9 +60,9 @@ const ProfileScreen: React.FC<Props> = () => {
   if (loading) {
     <AppLoading />;
   }
-  // FIXME: Scrollview doesn't allow the screen to scroll
+
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header>
         <View style={styles.headerLeft}></View>
         <View style={styles.headerCenter}>
@@ -54,7 +72,7 @@ const ProfileScreen: React.FC<Props> = () => {
           <Feather name="settings" size={32} color={colors.secondary.blueDark} style={{ paddingRight: 20 }} />
         </View>
       </Header>
-      <ScrollView style={styles.bodyContainer}>
+      <ScrollView style={styles.bodyContainer} showsVerticalScrollIndicator={false}>
         <View style={styles.sectionStatistics}>
           <Text style={{ ...typography.headingOne, marginLeft: 4 }}>Statistics</Text>
           <View style={styles.cardRow}>
@@ -95,16 +113,8 @@ const ProfileScreen: React.FC<Props> = () => {
               { key: 't2', title: 'Followers' },
             ]}
           >
-            <View key={'t1'}>
-              {followingData.map((friend: FriendItem, index) => {
-                return <MultiTabListItem item={friend} key={index} />;
-              })}
-            </View>
-            <View key={'t2'}>
-              {followerData.map((friend: FriendItem, index) => {
-                return <MultiTabListItem item={friend} key={index} />;
-              })}
-            </View>
+            <View key={'t1'}>{followingList}</View>
+            <View key={'t2'}>{followerList}</View>
           </MultiTabView>
         </View>
       </ScrollView>
@@ -115,7 +125,7 @@ const ProfileScreen: React.FC<Props> = () => {
 export default ProfileScreen;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: { ...globalStyles.background, paddingBottom: 40 },
   bodyContainer: { marginHorizontal: 8 },
   sectionStatistics: {},
   sectionFriends: {},

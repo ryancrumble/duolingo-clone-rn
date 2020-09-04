@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     borderColor: colors.tints.gray,
     marginHorizontal: 5,
     marginVertical: 2,
+    ...globalStyles.background,
   },
   icon: {
     width: 36,
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
   titleText: {
     ...typography.fontSecondary,
     color: colors.primary.gray,
+    top: -6,
   },
   valueText: {
     ...typography.fontPrimary,

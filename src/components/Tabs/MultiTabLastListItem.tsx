@@ -1,31 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors, globalStyles, typography } from '../../styles/globalStyles';
-import { Avatar } from 'react-native-elements';
-import { FriendItem } from '../../types/data';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 interface Props {
-  item: FriendItem;
+  remainingItems: number;
 }
 
-const MultiTabListItem: React.FC<Props> = ({ item }) => {
-  const firstInitial = item.name.slice(0, 1);
-
+const MultiTabLastListItem: React.FC<Props> = ({ remainingItems }) => {
   return (
     <View style={styles.container}>
       <View style={styles.leftInnerContainer}>
-        <Avatar
-          size="small"
-          rounded
-          title={firstInitial}
-          activeOpacity={0.7}
-          containerStyle={{ backgroundColor: colors.secondary.lavendar }}
-        />
-        <View style={{ marginLeft: 16 }}>
-          <Text style={styles.userNameText}>{item.name}</Text>
-          <Text style={styles.userExpText}>{item.exp} XP</Text>
-        </View>
+        <Text style={styles.text}>View {remainingItems} more</Text>
       </View>
       <View style={styles.rightInnerContainer}>
         <FontAwesome5 name="chevron-right" size={12} color={colors.primary.gray} />
@@ -34,7 +20,7 @@ const MultiTabListItem: React.FC<Props> = ({ item }) => {
   );
 };
 
-export default MultiTabListItem;
+export default MultiTabLastListItem;
 
 const styles = StyleSheet.create({
   container: {
@@ -47,25 +33,22 @@ const styles = StyleSheet.create({
     borderColor: colors.tints.gray,
     backgroundColor: colors.primary.white,
     paddingHorizontal: 20,
+    borderBottomStartRadius: 25,
+    borderBottomEndRadius: 25,
   },
   leftInnerContainer: {
     ...globalStyles.centerAlign,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     flex: 11,
+    paddingLeft: 8,
   },
   rightInnerContainer: {
     flex: 1,
   },
-  userNameText: {
+  text: {
     ...typography.fontPrimary,
     color: colors.tints.black,
     fontSize: 22,
-  },
-  userExpText: {
-    ...typography.fontSecondary,
-    fontSize: 15,
-    color: colors.primary.gray,
-    top: -4,
   },
 });

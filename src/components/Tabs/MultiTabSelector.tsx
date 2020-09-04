@@ -1,7 +1,7 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import { ButtonGroup } from 'react-native-elements';
-import { colors, globalStyles, typography } from '../../styles/globalStyles';
+import React, { useState, useEffect } from 'react';
+import { Animated, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { ButtonGroup, ElementObject } from 'react-native-elements';
+import { colors, typography } from '../../styles/globalStyles';
 
 export interface TabType {
   key: string;
@@ -16,21 +16,59 @@ interface Props {
   style?: any;
 }
 
+const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+
 const MultiTabSelector: React.FC<Props> = ({ selectedIndex, setSelectedIndex, tabs, style }) => {
-  const buttons = tabs.map((tab) => tab.title);
+  const [xPositions, setXPositions] = useState([] as number[]);
+  const [buttons, setButtons] = useState([] as ElementObject[]);
+
+  // const slideAnim = new Animated.Value(0);
+  const buttonWidth = (1 / tabs.length) * 100 + '%';
+
+  const initialTabs = () => {
+    const _xPositions: number[] = [];
+    const _buttons = tabs.map((tab, index) => {
+      const component = () => {
+        return (
+          <AnimatedTouchable
+            style={{ width: buttonWidth }}
+            onLayout={(e: any) => _xPositions.push(e.nativeEvent.layout.x)}
+            onPress={() => onPress(index)}
+          >
+            <Text style={styles.textStyle}>{tab.title}</Text>
+          </AnimatedTouchable>
+        );
+      };
+
+      return { element: component };
+    });
+
+    setXPositions(_xPositions);
+    setButtons(_buttons);
+  };
+
+  const onPress = (index: number) => {
+    setSelectedIndex(index);
+    // handleSlide
+    // Animated.spring(slideAnim, { toValue: xPositions[index], useNativeDriver: true }).start();
+  };
+
+  useEffect(() => {
+    initialTabs();
+  }, []);
 
   return (
-    <ButtonGroup
-      onPress={setSelectedIndex}
-      selectedIndex={selectedIndex}
-      buttons={buttons}
-      buttonStyle={styles.buttonStyle}
-      selectedButtonStyle={styles.selectedButtonStyle}
-      textStyle={styles.textStyle}
-      innerBorderStyle={styles.innerBorderStyle}
-      selectedTextStyle={styles.selectedTextStyle}
-      containerStyle={{ ...styles.containerStyle, ...style }}
-    />
+    <View>
+      <ButtonGroup
+        onPress={() => onPress(selectedIndex)}
+        selectedIndex={selectedIndex}
+        buttons={buttons}
+        selectedButtonStyle={styles.selectedButtonStyle}
+        selectedTextStyle={styles.selectedTextStyle}
+        innerBorderStyle={styles.innerBorderStyle}
+        containerStyle={{ ...styles.containerStyle, ...style }}
+      />
+    </View>
   );
 };
 
@@ -51,20 +89,23 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     borderTopStartRadius: 25,
     borderTopEndRadius: 25,
+    flexGrow: 0,
+    flexBasis: 1,
+    marginBottom: 2,
   },
-
   textStyle: {
     ...typography.fontPrimary,
-    fontSize: 16,
-    color: colors.secondary.blueDark,
+    fontSize: 18,
+    color: colors.tints.grayThree,
     textTransform: 'uppercase',
   },
   selectedButtonStyle: {
-    borderWidth: 0,
-    borderColor: colors.secondary.yellow,
     backgroundColor: colors.primary.white,
     borderTopStartRadius: 25,
     borderTopEndRadius: 25,
+    borderColor: colors.secondary.blue,
+    borderWidth: 0,
+    borderBottomWidth: 2,
   },
   selectedTextStyle: {
     ...typography.fontPrimary,

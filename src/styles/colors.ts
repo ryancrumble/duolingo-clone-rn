@@ -22,6 +22,7 @@ const colors = {
     greenTwo: '#E7F9D1',
     gray: '#CCCCCC',
     grayTwo: '#E5E5E5',
+    grayThree: '#AFAFAF',
     red: '#FFCCCC',
     redDark: '#EC5954',
     yellow: '#FFF5CC',

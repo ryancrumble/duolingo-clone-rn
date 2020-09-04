@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header/Header';
 import Token from '../components/Header/Token';
 import ShopCard from '../components/Shop/ShopCard';
-import { colors, typography } from '../styles/globalStyles';
+import { colors, typography, globalStyles } from '../styles/globalStyles';
 
 import { AppLoading } from 'expo';
 import { ShopItem } from '../types/data';
@@ -26,7 +26,7 @@ const ShopScreen: React.FC<Props> = () => {
     return <AppLoading />;
   }
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header>
         <View style={{ flex: 1 }} />
         <View style={{ flex: 1, alignItems: 'center' }}>
@@ -34,7 +34,7 @@ const ShopScreen: React.FC<Props> = () => {
         </View>
         <Token style={{ flex: 1 }} />
       </Header>
-      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      <ScrollView style={styles.sectionBody} showsVerticalScrollIndicator={false}>
         {mockShopData.data.map((ShopSection: any) => {
           return (
             <View style={styles.sectionContainer} key={ShopSection.name}>
@@ -54,6 +54,9 @@ export default ShopScreen;
 
 const styles = StyleSheet.create({
   container: {
+    ...globalStyles.background,
+  },
+  sectionBody: {
     marginHorizontal: 12,
   },
   sectionContainer: {

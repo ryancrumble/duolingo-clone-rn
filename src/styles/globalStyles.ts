@@ -9,6 +9,9 @@ const globalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  background: {
+    backgroundColor: colors.primary.white,
+  },
 });
 
 export { globalStyles, colors, typography };
