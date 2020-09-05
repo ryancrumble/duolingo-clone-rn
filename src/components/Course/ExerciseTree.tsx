@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { Course, CourseSection } from '../../types/data';
 import ExerciseNode from './ExerciseNode';
@@ -29,11 +29,14 @@ const renderSection = ({ item }: any) => {
 };
 
 const ExerciseTree: React.FC<Props> = ({ data }) => {
-  const [selectedId, setSelectedId] = useState(null);
-
   return (
     <View>
-      <FlatList data={data.sections} renderItem={renderSection} keyExtractor={(item) => item.id} />
+      <FlatList
+        data={data.sections}
+        renderItem={renderSection}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 };
@@ -46,8 +49,6 @@ const styles = StyleSheet.create({
     paddingBottom: 60,
   },
   tier: {
-    // borderColor: 'lightgreen',
-    // borderWidth: 3,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',

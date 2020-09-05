@@ -56,13 +56,10 @@ export default Leaderboard;
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: 'blue',
-    borderWidth: 4,
-    paddingBottom: 10,
+    paddingBottom: 200,
   },
   // USERS
   userItem: {
-    // flex: 1,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',

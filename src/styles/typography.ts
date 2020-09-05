@@ -31,7 +31,7 @@ const typography = StyleSheet.create({
   headerText: {
     fontFamily: 'Baloo2SemiBold',
     fontSize: 20,
-    color: '#B0B0B0',
+    color: colors.tints.grayThree,
   },
   headingOne: {
     fontFamily: 'Baloo2SemiBold',
@@ -41,6 +41,12 @@ const typography = StyleSheet.create({
   linkText: {
     fontFamily: 'Baloo2SemiBold',
     fontSize: 20,
+    textTransform: 'uppercase',
+    color: colors.secondary.blue,
+  },
+  linkInlineText: {
+    fontFamily: 'NunitoRegular',
+    fontSize: 16,
     textTransform: 'uppercase',
     color: colors.secondary.blue,
   },

@@ -17,7 +17,6 @@ const LeagueScreen: React.FC<Props> = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // fetchData
     setLoading(false);
   }, []);
 
@@ -38,5 +37,6 @@ export default LeagueScreen;
 const styles = StyleSheet.create({
   container: {
     ...globalStyles.background,
+    flex: 1,
   },
 });

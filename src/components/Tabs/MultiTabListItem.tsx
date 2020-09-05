@@ -7,13 +7,14 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 interface Props {
   item: FriendItem;
+  style?: any;
 }
 
-const MultiTabListItem: React.FC<Props> = ({ item }) => {
+const MultiTabListItem: React.FC<Props> = ({ item, style }) => {
   const firstInitial = item.name.slice(0, 1);
 
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, ...style }}>
       <View style={styles.leftInnerContainer}>
         <Avatar
           size="small"

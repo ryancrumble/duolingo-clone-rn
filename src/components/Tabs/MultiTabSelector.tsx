@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   selectedTextStyle: {
     ...typography.fontPrimary,
     fontSize: 16,
-    color: colors.primary.black,
+    color: colors.secondary.blue,
   },
   innerBorderStyle: {
     width: 0,

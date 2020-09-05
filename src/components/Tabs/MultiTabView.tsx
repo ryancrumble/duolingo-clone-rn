@@ -5,6 +5,9 @@ import MultiTabSelector, { TabType } from './MultiTabSelector';
 
 interface Props {
   tabs: TabType[];
+  style?: any;
+  selectorStyle?: any;
+  viewStyle?: any;
 }
 
 const MultiTabView: React.FC<Props> = (props) => {
@@ -27,12 +30,15 @@ const MultiTabView: React.FC<Props> = (props) => {
   }, [selectedIndex]);
 
   return (
-    <>
-      <View style={styles.multiTabSelector}>
-        <MultiTabSelector tabs={props.tabs} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
-      </View>
-      <View style={styles.childContainer}>{renderTabPane()}</View>
-    </>
+    <View style={{ ...styles.container, ...props.style }}>
+      <MultiTabSelector
+        tabs={props.tabs}
+        selectedIndex={selectedIndex}
+        setSelectedIndex={setSelectedIndex}
+        style={props.selectorStyle}
+      />
+      <View style={{ ...styles.childContainer, ...props.viewStyle }}>{renderTabPane()}</View>
+    </View>
   );
 };
 
@@ -40,6 +46,5 @@ export default MultiTabView;
 
 const styles = StyleSheet.create({
   container: {},
-  multiTabSelector: {},
   childContainer: {},
 });

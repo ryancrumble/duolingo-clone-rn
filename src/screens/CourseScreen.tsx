@@ -37,9 +37,7 @@ const CourseScreen: React.FC<Props> = () => {
 export default CourseScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    ...globalStyles.background,
-  },
+  container: { ...globalStyles.background },
   headerLeft: { flex: 2, marginLeft: 12 },
   headerCenter: {
     flex: 3,

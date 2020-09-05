@@ -2,21 +2,23 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors, globalStyles, typography } from '../../styles/globalStyles';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface Props {
   remainingItems: number;
+  onPress?: any;
 }
 
-const MultiTabLastListItem: React.FC<Props> = ({ remainingItems }) => {
+const MultiTabLastListItem: React.FC<Props> = ({ remainingItems, onPress }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.leftInnerContainer}>
         <Text style={styles.text}>View {remainingItems} more</Text>
       </View>
       <View style={styles.rightInnerContainer}>
         <FontAwesome5 name="chevron-right" size={12} color={colors.primary.gray} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -33,8 +35,8 @@ const styles = StyleSheet.create({
     borderColor: colors.tints.gray,
     backgroundColor: colors.primary.white,
     paddingHorizontal: 20,
-    borderBottomStartRadius: 25,
-    borderBottomEndRadius: 25,
+    borderBottomStartRadius: 20,
+    borderBottomEndRadius: 20,
   },
   leftInnerContainer: {
     ...globalStyles.centerAlign,

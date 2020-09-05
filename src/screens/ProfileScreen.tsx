@@ -3,34 +3,27 @@ import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather, FontAwesome5 } from '@expo/vector-icons';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
-
+import { AppLoading } from 'expo';
 import { colors, typography, globalStyles } from '../styles/globalStyles';
+import { sortListByExp } from '../utils/dataUtils';
+
 import Header from '../components/Header/Header';
 import StatisticCard from '../components/Profile/StatisticCard';
 import MultiTabView from '../components/Tabs/MultiTabView';
 import MultiTabListItem from '../components/Tabs/MultiTabListItem';
+import MultiTabLastListItem from '../components/Tabs/MultiTabLastListItem';
 
 import mockFriends from '../../mocks/friendsData.json';
-import { FriendItem } from '../types/data';
-import { AppLoading } from 'expo';
-import MultiTabLastListItem from '../components/Tabs/MultiTabLastListItem';
 interface Props {
-  name: string;
-  color: string;
+  navigation: any;
 }
 
-const ProfileScreen: React.FC<Props> = () => {
+const ProfileScreen: React.FC<Props> = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   const [followingList, setFollowingList] = useState([] as JSX.Element[]);
   const [followerList, setFollowerList] = useState([] as JSX.Element[]);
 
   const renderFriendsList = (data: any[]) => {
-    const sortListByExp = (arr: FriendItem[]) => {
-      return arr.sort((a: FriendItem, b: FriendItem) => {
-        return b.exp - a.exp;
-      });
-    };
-
     const sortedData = sortListByExp(data);
     const arr: JSX.Element[] = [];
 
@@ -39,7 +32,13 @@ const ProfileScreen: React.FC<Props> = () => {
         arr.push(<MultiTabListItem item={sortedData[i]} key={i} />);
       } else if (i === 5) {
         const remainingFriends = sortedData.length - 5;
-        arr.push(<MultiTabLastListItem remainingItems={remainingFriends} key={i} />);
+        arr.push(
+          <MultiTabLastListItem
+            remainingItems={remainingFriends}
+            key={i}
+            onPress={() => navigation.navigate('Friends')}
+          />,
+        );
       } else {
         break;
       }
@@ -69,7 +68,13 @@ const ProfileScreen: React.FC<Props> = () => {
           <Text style={{ ...typography.headerText }}>Profile</Text>
         </View>
         <View style={styles.headerRight}>
-          <Feather name="settings" size={32} color={colors.secondary.blueDark} style={{ paddingRight: 20 }} />
+          <Feather
+            name="settings"
+            size={32}
+            color={colors.secondary.blue}
+            style={{ paddingRight: 20 }}
+            onPress={() => navigation.navigate('Settings')}
+          />
         </View>
       </Header>
       <ScrollView style={styles.bodyContainer} showsVerticalScrollIndicator={false}>
