@@ -4,14 +4,14 @@ This is a simple clone of the Duolingo app built in React Native, Expo, and Type
 
 ## Setup
 ### Requirements
-- [Expo](https://expo.io/learn)
+- Expo
 - Xcode
 - Android Studio
 
 ### Steps
 - Clone repo.
 - Run `yarn start`
-- Choose your platform (and)
+- Choose your platform
 
 ## Attributes
 
