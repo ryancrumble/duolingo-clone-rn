@@ -1,4 +1,4 @@
-# Duoling-clone
+# Duolingo-clone
 
 This is a simple clone of the Duolingo app built in React Native, Expo, and Typescript.
 
